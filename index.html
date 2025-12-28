@@ -273,6 +273,11 @@ input:checked + .slider::before {
     </style>
 </head>
 <body>
+    <script>
+  if (localStorage.getItem("theme") === "dark") {
+    document.documentElement.classList.add("dark-mode");
+  }
+</script>
 
     <nav>
         <div class="nav-content">
