@@ -259,12 +259,58 @@ footer {
   font-size: 20px;           /* slightly bigger for emphasis */
 }
 
+/* --- Downloads page specific styles (moved from downloads.html) --- */
+.hero-mini {
+  padding: 120px 20px 40px;
+  text-align: center;
+}
+.hero-mini h1 { font-size: 48px; font-weight: 600; margin-bottom: 10px; }
+.hero-mini p { font-size: 21px; color: var(--text-secondary); }
+
+.category-label {
+  max-width: 1000px;
+  margin: 40px auto 20px;
+  padding: 0 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+.download-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: transform 0.3s var(--easing), box-shadow 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+
+.download-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.download-card h3 { font-size: 22px; color: var(--text-color); margin-bottom: 8px; }
+.download-card p { font-size: 15px; color: var(--text-secondary); }
+
+.os-icon { font-size: 40px; margin-bottom: 20px; opacity: 0.8; }
+
 /* Shared detail-page styles (moved here to avoid duplication) */
 .detail-card {
   background: var(--card-bg);
-  padding: 60px 40px;
+  padding: 48px 48px;
   border-radius: 30px;
-  max-width: 480px;
+  max-width: 720px;
   width: 90%;
   text-align: center;
   animation: revealIn 0.8s var(--easing);
@@ -289,8 +335,32 @@ footer {
 .back-link { display: inline-block; margin-top: 32px; font-size: 14px; color: var(--text-secondary); text-decoration: none; }
 .back-link:hover { text-decoration: underline; }
 
+/* detail-page typography tweaks */
+.detail-card h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: -0.015em;
+}
+
+.detail-card p {
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
 @keyframes revealIn { from { opacity: 0; transform: scale(0.98) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
 
 /* accessible focus for buttons */
 .btn:focus { outline: 3px solid rgba(0,118,255,0.15); outline-offset: 3px; }
+
+/* Center single-item detail pages */
+.detail-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
 
