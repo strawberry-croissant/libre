@@ -101,11 +101,98 @@
   flex-wrap: wrap;
   gap: 40px;
 }
+/* New page-specific styles */
+.platform-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:18px; max-width:980px; margin:30px auto; }
+.platform-card{background:var(--card-bg, #fff); border-radius:12px; padding:18px; text-decoration:none; color:inherit; box-shadow:var(--shadow); display:block; transition:transform .15s ease, box-shadow .15s ease}
+.platform-card:hover{transform:translateY(-6px); box-shadow:0 10px 30px rgba(0,0,0,0.08)}
+.platform-card .os-icon{font-size:28px}
+.how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;max-width:980px;margin:30px auto}
+.how-step{background:var(--card-bg,#fff);padding:18px;border-radius:12px;text-align:center;box-shadow:var(--shadow)}
+.testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:980px;margin:30px auto}
+.testimonial{background:var(--card-bg,#fff);padding:16px;border-radius:10px;box-shadow:var(--shadow);font-size:14px}
+.newsletter{max-width:640px;margin:24px auto 48px;padding:18px;border-radius:12px;background:var(--card-bg,#fff);box-shadow:var(--shadow);display:flex;gap:12px;align-items:center}
+.newsletter input{flex:1;padding:12px;border-radius:8px;border:1px solid rgba(0,0,0,0.08)}
+.newsletter button{padding:12px 18px;border-radius:8px;border:none;background:var(--accent-color);color:#fff;font-weight:600;cursor:pointer}
 </style>
 
+<!-- Inserted content after downloads (kept in DOM for progressive enhancement) -->
+
+<!-- Platforms -->
+<section class="grid-container reveal" id="platforms" style="grid-template-columns: 1fr;">
+  <h2 style="text-align:center; margin-bottom:18px;">Available Platforms</h2>
+  <div class="platform-grid">
+    <a class="platform-card" href="default.html">
+      <div class="os-icon">💠</div>
+      <h3>Windows 11 (Recommended)</h3>
+      <p style="opacity:0.8; font-size:14px;">The full Libre experience with drivers and tools.</p>
+    </a>
+    <a class="platform-card" href="windows.html">
+      <div class="os-icon">🪟</div>
+      <h3>Windows 10</h3>
+      <p style="opacity:0.8; font-size:14px;">Stable and compatible with older hardware.</p>
+    </a>
+    <a class="platform-card" href="ubuntu.html">
+      <div class="os-icon">🐧</div>
+      <h3>Ubuntu</h3>
+      <p style="opacity:0.8; font-size:14px;">GNOME-based, beginner-friendly Linux build.</p>
+    </a>
+    <a class="platform-card" href="mint.html">
+      <div class="os-icon">🍃</div>
+      <h3>Linux Mint</h3>
+      <p style="opacity:0.8; font-size:14px;">Lightweight and developer-friendly.</p>
+    </a>
+    <a class="platform-card" href="mac.html" style="opacity:0.9;">
+      <div class="os-icon">🍎</div>
+      <h3>Mac (Beta)</h3>
+      <p style="opacity:0.8; font-size:14px;">Experimental macOS build — use with caution.</p>
+    </a>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="grid-container reveal" id="how-it-works" style="grid-template-columns: 1fr;">
+  <h2 style="text-align:center; margin-bottom:18px;">How it works</h2>
+  <div class="how-grid">
+    <div class="how-step">
+      <h3>1. Choose</h3>
+      <p>Pick the platform that fits your device.</p>
+    </div>
+    <div class="how-step">
+      <h3>2. Prepare</h3>
+      <p>Download assets and follow the included instructions.</p>
+    </div>
+    <div class="how-step">
+      <h3>3. Install</h3>
+      <p>Use Rufus or your preferred tool to create an installer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="grid-container reveal" id="testimonials" style="grid-template-columns: 1fr;">
+  <h2 style="text-align:center; margin-bottom:18px;">What people say</h2>
+  <div class="testimonial-grid">
+    <div class="testimonial">“Libre made playing games in school painless — everything just worked.” — anno*****@gmail.com</div>
+    <div class="testimonial">“Fast, lightweight, and privacy-focused. Exactly what I wanted.” — cano******@gmail.com</div>
+    <div class="testimonial">“Great documentation and smooth install process.” — shar***@students.edu.sg</div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="grid-container reveal" id="newsletter" style="grid-template-columns: 1fr;">
+  <div class="newsletter">
+    <div style="flex:1">
+      <strong>Stay updated</strong>
+      <div style="opacity:0.8; font-size:13px">Get release notes and tips — no spam.</div>
+    </div>
+    <input id="newsletterEmail" type="email" placeholder="you@example.com" aria-label="Email address">
+    <button id="newsletterBtn">Subscribe</button>
+  </div>
+</section>
+
 <footer>
-  <div style="max-width:980px; margin:0 auto; border-top:1px solid rgba(128,128,128,0.2); padding-top:20px;">
-    Copyright © 2026 strawberry-croissant. All rights reserved. 
+  <div style="max-width:980px; margin:0 auto; border-top:1px solid rgba(128,128,128,0.2); padding-top:20px; text-align:center;">
+    Copyright © 2026 strawberry-croissant. All rights reserved.
   </div>
 </footer>
 
