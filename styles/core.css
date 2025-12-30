@@ -244,8 +244,8 @@ footer {
 }
 /* downloads section tweaks */
 .download-section {
-  text-align: center;       /* center everything inside */
-  padding: 100px 20px 160px; /* top 100px, bottom 160px to move it up from footer */
+  text-align: center; 
+  padding: 100px 20px 160px; 
 }
 
 .download-section .download-row {
