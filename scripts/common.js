@@ -1,5 +1,7 @@
 /* Centralized common scripts: theme toggle + reveal observer */
 (function () {
+  // avoid initial slider animation until we sync the checked state
+  document.documentElement.classList.add("no-toggle-transition");
   function safeGetItem(key) {
     try {
       return localStorage.getItem(key);
@@ -12,7 +14,7 @@
     try {
       localStorage.setItem(key, value);
     } catch (err) {
-      // ignore (e.g. private mode)
+      // ignore (e.g. incognito)
     }
   }
 
@@ -72,6 +74,12 @@
       if (!toggle.hasAttribute("role")) toggle.setAttribute("role", "switch");
 
       syncToggleState(toggle);
+      // remove temporary class after browser paints with synced state
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          document.documentElement.classList.remove("no-toggle-transition");
+        }, 50);
+      });
       toggle.addEventListener("change", toggleThemeHandler);
 
       toggle.addEventListener("keyup", () => toggle.classList.add("keyboard-focus"));
@@ -85,6 +93,14 @@
   window.addEventListener("pageshow", () => {
     applySavedTheme();
     const toggle = document.getElementById("themeToggle");
-    if (toggle) syncToggleState(toggle);
+    if (toggle) {
+      syncToggleState(toggle);
+    }
+    // remove no-toggle-transition after syncing (bfcache restores)
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        document.documentElement.classList.remove("no-toggle-transition");
+      }, 50);
+    });
   });
 })();
