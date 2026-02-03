@@ -5,9 +5,174 @@
   color: var(--accent-color);
   font-weight: 500;
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 12px;
 }
 
 .beta-card {
   opacity: 0.7;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 650px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1;
+  opacity: 0.6;
+}
+
+.modal-close:hover {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+.modal-content h2 {
+  margin: 0 0 10px 0;
+  font-size: 28px;
+  color: var(--text-color);
+}
+
+.modal-description {
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.driver-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.driver-option {
+  background: var(--bg-color);
+  border: 2px solid rgba(128, 128, 128, 0.2);
+  border-radius: 16px;
+  padding: 30px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+}
+
+.driver-option:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(41, 151, 255, 0.2);
+}
+
+.driver-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.driver-icon svg {
+  width: 56px;
+  height: 56px;
+}
+
+.driver-icon img {
+  max-width: 60px;
+  max-height: 60px;
+  object-fit: contain;
+}
+
+.driver-option h3 {
+  font-size: 18px;
+  margin: 0 0 12px 0;
+  color: var(--text-color);
+}
+
+.driver-option p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0 0 16px 0;
+  line-height: 1.6;
+}
+
+.driver-badge {
+  display: inline-block;
+  background: rgba(128, 128, 128, 0.2);
+  color: var(--text-color);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.driver-badge.special {
+  background: rgba(41, 151, 255, 0.2);
+  color: var(--accent-color);
+}
+
+/* Make Windows download cards clickable without being links */
+.download-card[data-os] {
+  cursor: pointer;
+}
+
+/* Responsive modal */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 30px 20px;
+    width: 95%;
+  }
+  
+  .driver-options {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .modal-content h2 {
+    font-size: 24px;
+  }
 }

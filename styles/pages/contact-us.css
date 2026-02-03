@@ -1,7 +1,7 @@
 /* Page specific styles for contact-us.html */
 
 .contact-us .hero {
-  /* Inherits from core.css .hero but we can add specific tweaks if needed */
+  /* Inherits from core.css .hero but can add specific tweaks if needed */
   justify-content: flex-start;
   padding-top: 140px;
 }

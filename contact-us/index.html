@@ -7,22 +7,24 @@
   <title>Libre - Contact Us</title>
   <meta name="description" content="Get in touch with the Libre team for support, feedback, or inquiries.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%231d1d1f'/><path d='M30 30 L60 50 L30 70' stroke='%232997ff' stroke-width='12' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
-  <link rel="stylesheet" href="styles/core.css">
-  <link rel="stylesheet" href="styles/components.css">
-  <link rel="stylesheet" href="styles/pages/contact-us.css">
-  <script src="scripts/common.js"></script>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,300,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/core.css">
+  <link rel="stylesheet" href="/styles/components.css">
+  <link rel="stylesheet" href="/styles/pages/contact-us.css">
+  <script src="/scripts/config.js"></script>
+  <script src="/scripts/common.js"></script>
 </head>
 
 <body>
   <nav>
     <div class="nav-content">
-      <h1 class="logo"><a href="index.html">Libre</a></h1>
+      <h1 class="logo"><a href="/">Libre</a></h1>
       <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="legal.html">Legal</a>
-        <a href="downloads.html">Downloads</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact-us.html" class="active">Contact Us</a>
+        <a href="/">Home</a>
+        <a href="/legal">Legal</a>
+        <a href="/downloads">Downloads</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact-us" class="active">Contact Us</a>
         <div class="theme-toggle">
           <span class="toggle-label">Dark</span>
           <label class="switch">
@@ -43,19 +45,29 @@
         respects their freedom.
         Our mission is to prevent massive bodies of power from controlling your digital life.
       </p>
+      <div class="reveal">
+        <h2> What we do</h2>
+        <p>We have developed advanced bypasses for what we consider to be oppressive software. </p>
+      </div>
+      <div class="reveal">
+        <h2> Why we do this</h2>
+        <p>We believe that oppressive software violates your fundamental freedom. We have seen how organizations dismiss the voices of their users, and we are committed to providing an alternative that respects your digital rights.</p>
+      </div>
 
       <h2 class="reveal contact-subheading">Contact Us</h2>
       <p class="reveal slow">
         For inquiries, support, or feedback, please reach out to us at:
         <br><br>
-        Email: <a href="mailto:strawberrycroissants@outlook.com">strawberrycroissants@outlook.com</a>
+        If you use Gmail: <a class="oss-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=strawberrycroissants@outlook.com" target="_blank">strawberrycroissants@outlook.com</a>
+        <br>
+        If you use Outlook: <a class="oss-link" href="https://outlook.live.com/mail/0/deeplink/compose?to=strawberrycroissants@outlook.com" target="_blank">strawberrycroissants@outlook.com</a>
       </p>
     </div>
   </section>
 
   <footer>
-    <div style="max-width:980px; margin:0 auto; border-top:1px solid rgba(128,128,128,0.2); padding-top:20px; text-align:center;">
-      Copyright © 2026 strawberry-croissant. All rights reserved.
+    <div class="container footer-content text-center">
+      <a href="/Downloads/license.txt" download class="footer-link">Copyleft 🄯 2026 strawberry-croissant. All rights reserved.</a>
     </div>
   </footer>
 </body>

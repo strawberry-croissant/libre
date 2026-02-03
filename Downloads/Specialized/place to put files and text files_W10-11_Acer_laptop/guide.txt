@@ -1,0 +1,50 @@
+INTERNAL TPID:SW11/10_LTP_ACE_PLD
+/* for consumer: ignore internal tpids, this are just ids for the devs to identify what text document this is */
+/* GUIDE TESTED ON: windows 11 24h2 */
+/* Windows to-go is depreciated by Microsoft. most features are unaffected. */
+/*tested on windows 11 24H2,windows 10 22H2 may work but behavior differs */
+/* REMEMBER TO UNZIP THE FILE */
+
+
+1. REQUIRED MATERIALS: 1 usb drive, minimum 32gb (for faster performance, a hard disk is not recommended. a usb/ssd drive is the best option.).1 external mouse as TOUCHPAD/TOUCHSCREEN DRIVERS HAVE NOT BEEN INSTALLED. an extra computer to read this text document OR another person that knows how to do this bypass. email us at strawberrycroissant@outlook.com to ask us for an expert/developer for help.
+
+2. Organizing (same as what was said in website at the end)
+In your downloads page (or wherever you save your files), you should see a bunch of zip files, including this one. Unzip this first. Open the readmefirst, then readmesecond and last readmethird. In the file there should be a materials folder. Inside there is drivers folder. 
+ 1. Put the Rufus.exe file in "Materials", do NOT put it in "Drivers" or anywhere else. 
+ 2. Do the same for the .iso file, put it in "Materials".
+ 3. You are now left with a LOT of zip files. sort them out.
+    1. place the "4G_Fibocom......zip" file into "Drivers/Network Drivers" 
+    2. Find a "EduLed.....zip" file, put it in "Drivers/Optional Drivers.winignore"
+    3. Find a "MgmtEngine_Intel......zip" file, put it in "Drivers/Security.winignore"
+    4. Place the rest of the zip files in "Drivers/POST_OOBE_DRIVER"
+
+all your files should be where they are now.
+
+3. Getting a bootable USB (you can do this in your pld or in another computer)
+ 1. plug in your usb
+ 2. go to materials and open rufus. select your usb and under boot selection select "disc or iso image". click the select button next to it and open materials file and select the windows 11/10 iso (DO NOT PUT THE ENTIRE FILE INTO THE USB). IMPORTANT. UNDER IMAGE OPTION, YOU MUST SELECT WINDOWS TO GO. ensure partition scheme is GPT, target system is uefi and file system is ntfs. click start. select windows 11/10 home and tick "Remove requirement for an online Microsoft account" and "Disable data collection". then, wait for it to load. (ensure that whatever left inside the usb is saved/useless)
+ 3. once its finished, put the "Drivers" file (in \<filename>\Materials) inside the usb drive. just put it into the usb, you do not need to make a new file/find a file to put it in. YOUR USB IS NOW BOOTABLE AND READY TO BE USED FOR YOUR PLD. 
+
+
+4. Entering BIOS
+before selecting to boot into your usb, you will need to access BIOS first and change some settings. to access BIOS, you will need to click the power on button on your PLD and immediately spam/hold the F2 key on your PLD. if that doesn't work, try holding the Fn key alongside the F2 key (restart every time it doesn't work and sends you to Windows.) IF ALL ELSE FAILS and you see the windows login screen, there is still a final option. hold shift and open the power options, then select restart. you should see the windows loading icon saying "please wait". now let go of the shift key. A blue screen should pop up. within the blue screen, select "Troubleshoot", then select "UEFI Firmware Settings". Click restart. You should now have entered BIOS. 
+
+
+5. BIOS instructions (PLD)
+on the left side of your screen, there should be a list of options. You will need to select the "Main" tab, then turn on "F12 Boot Menu". This will allow you to just hold F12/Fn+F12 next time you want to boot into your USB. Now, select the "Exit" tab, and select the "Exit saving changes" option. Select "Yes". Now let it restart for the changes to take place.
+6. BOOT instructions 
+once you have booted into windows (do not force restart, if ur usb is slow it will take it 5 mins for first boot, dont panic) , plug in your usb. click restart and hold down the F12/Fn+F12 key. select your USB drive and then click enter. you should end up into windows 10/11 when you eventually reach the "select a wi-fi" page, select the included network driver. if you do not have it, go back to the website and download it. now, you NEED ethernet, or use the network driver inside "Materials/Drivers/Network Drivers". Select the driver and click continue. just follow the instructions on screen until you reach the windows lockscreen/home page.
+
+7. Success.
+You have successfully done everything correctly up until this point. You can now download anything, do anything, without any limits. To get your computer to work without an external mouse again,  click on the windows key, type "Device Manager", click enter. On the top bar below help, click on the icon that has a paper, a settings gear and a green arrow. Then, in the text bar, type "C:\Drivers\POST_OOBE_DRIVER" and check "Include subfolders". click next n let it run. If things still dont work, type "C:\Drivers\Security.winignore" (CAUTION: Enables Intel ME on your USB. Security may re-enable school management. only install security drivers if your keyboard, touchpad, or other features are non-functional) If you would like your LED at the back, type "C:\Drivers\Optional Drivers.winignore". (WARNING: THE SYSTEM IS RAN ON THE USB. DO NOT UNPLUG WHILE RUNNING UNDER ANY CIRCUMSTANCES.) 
+
+
+8. Toggling between OSes
+To go back to your normal windows, just restart. If you are still booting into your USB and not your normal windows, press f12 and select the 2nd boot manager. If this is too confusing, just shutdown and plug your USB out. To boot back into your USB, restart, f12, and select the 2nd one. if its normal windows, restart again and dont touch your pc. 
+
+
+to understand/if you need an explanation/if you need help on how and what each of the files do, email us at strawberrycroissant@outlook.com.
+
+
+Developed with love, 
+strawberry-croissant <3

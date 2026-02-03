@@ -1,0 +1,28 @@
+# 1. Disable directory browsing
+Options -Indexes
+
+# 2. Prevent access to ALL hidden files
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# 3. Security Headers
+<IfModule mod_headers.c>
+    # Prevent browsers from guessing content type
+    Header set X-Content-Type-Options "nosniff"
+    
+    # Enable XSS protection filter
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Prevent clickjacking
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # Content Security Policy (Allows scripts from self and your tracker; allows inline styles/scripts for now)
+    # CAUTION: 'unsafe-inline' is used because you have inline scripts. 
+    # ideally, move all inline JS to files and remove 'unsafe-inline'.
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://tracker-backend-bvo4.onrender.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://tracker-backend-bvo4.onrender.com http://localhost:3000;"
+    
+    # Referrer Policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

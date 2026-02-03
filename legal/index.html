@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libre - Legal</title>
+  <meta name="description" content="Legal information, terms of service, and privacy policy for Libre operating system.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%231d1d1f'/><path d='M30 30 L60 50 L30 70' stroke='%232997ff' stroke-width='12' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,300,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/core.css">
+  <link rel="stylesheet" href="/styles/components.css">
+  <link rel="stylesheet" href="/styles/pages/legal.css">
+  <script src="/scripts/config.js"></script>
+  <script src="/scripts/common.js"></script>
+  <style>
+    /* Page-specific layout for grounded footer */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .legal-main {
+      flex: 1;
+      padding-top: 100px; /* Clear the 44px nav + extra breathing room for curves */
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-content">
+      <h1 class="logo"><a href="/">Libre</a></h1>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/legal" class="active">Legal</a>
+        <a href="/downloads">Downloads</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact-us">Contact Us</a>
+        <div class="theme-toggle">
+          <span class="toggle-label">Dark</span>
+          <label class="switch">
+            <input type="checkbox" id="themeToggle" aria-label="toggle dark mode" role="switch">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="legal-main">
+    <section class="grid-container reveal">
+      <div class="bento-card full-width">
+        <h2>Legal</h2>
+        <p class="mb-md">Legal information, terms of service, and privacy policies for this website.</p>
+        
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+          <a href="/Downloads/tos.txt" download class="btn btn-secondary">Terms of Service</a>
+          <a href="/Downloads/privpolicy.txt" download class="btn btn-secondary">Privacy Policy</a>
+          <a href="/Downloads/license.txt" download class="btn btn-secondary">License</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content text-center">
+      <a href="/Downloads/license.txt" download class="footer-link">Copyleft 🄯 2026 strawberry-croissant. All rights reserved.</a>
+    </div>
+  </footer>
+</body>
+</html>

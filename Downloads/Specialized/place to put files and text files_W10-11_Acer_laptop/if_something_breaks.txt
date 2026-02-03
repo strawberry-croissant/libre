@@ -1,0 +1,24 @@
+if something breaks its either 1 of 3
+
+1. ur just too dumb to do this. 
+2. a fatal error has occurred.
+3. god themselves has striked you, causing a bitflip, crashing your computer.
+
+not to worry, we have solutions for all.
+
+1. email us at strawberrycroissant@outlook.com and ask for a developer to help with the installation.
+  1.1. In your email, you must include: 1. Date and time you can call us. 2. What version you are installing (optimised or generic), your serial number, and what problems you face.
+
+2. email us the fatal error. we recommend you just remove the usb and reinstall it. If it still dosent work, follow the email instructions in 1.1.
+
+3. reinstall the iso and drivers from the website. if it still dosent work, email us and follow the email instructions in 1.1.
+
+
+none of the above? its probably 1.
+
+anyways just email us if u need anything
+
+
+
+Developed with love, 
+strawberry-croissant <3

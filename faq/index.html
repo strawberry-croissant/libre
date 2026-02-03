@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libre - FAQ</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,300,400&display=swap" rel="stylesheet">
+  <meta name="description" content="Frequently Asked Questions about Libre operating system. Installation, compatibility, and features.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%231d1d1f'/><path d='M30 30 L60 50 L30 70' stroke='%232997ff' stroke-width='12' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+  <link rel="stylesheet" href="/styles/core.css">
+  <link rel="stylesheet" href="/styles/components.css">
+  <link rel="stylesheet" href="/styles/pages/faq.css">
+  <script src="/scripts/config.js"></script>
+  <script src="/scripts/common.js"></script>
+  <script src="/scripts/faq.js" defer></script>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-content">
+      <h1 class="logo"><a href="/">Libre</a></h1>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/legal">Legal</a>
+        <a href="/downloads">Downloads</a>
+        <a href="/faq" class="active">FAQ</a>
+        <a href="/contact-us">Contact Us</a>
+        <div class="theme-toggle">
+          <span class="toggle-label">Dark</span>
+          <label class="switch">
+            <input type="checkbox" id="themeToggle" aria-label="toggle dark mode" role="switch">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="faq-section reveal mt-xl">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>Is Libre free to use?</h3>
+      <p>Yes, Libre is completely free and <a href="https://github.com/strawberry-croissant/libre" class="oss-link">open-source.</a></p>
+    </div>
+    <div class="faq-item">
+      <h3>  Why dont you guys reveal who you are? Who is strawberry-croissant? Are you guys just some random people? </h3>
+      <p> We dont reveal our names as we find it unnecessary and it puts us at risk of harassment as i know some people who drool over US. (we make people ovulate on demand btw)</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I install any software on Libre?</h3>
+      <p>Yes, Libre allows you to install and run any compatible software without restrictions.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is my data safe while using Libre?</h3>
+      <p>Absolutely. Libre prevents all software-based tracking and monitoring.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I update Libre?</h3>
+      <p>The version you downloaded cannot be updated without deleting data. We only recommend updating versions every major release.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>When is a major release?</h3>
+      <p>A major release happens every time the first number in the version number is incremented. For example, from 1.0.0 to 2.0.0.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Does Libre support gaming?</h3>
+      <p>Yes, Libre is optimized for performance and can run most games.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What are the system requirements?</h3>
+      <p>Libre is lightweight. You need a 64-bit processor, 2GB of RAM, and at least 20GB of storage space.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What version of the OSes am i using? Is it the latest versions?</h3>
+      <p> We usually update the OSes to their latest release. If we have not updated it, it is probably because we forgot about it. Not to worry, we regularily check for updates and update them as soon as possible.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How can I contribute?</h3>
+      <p>We welcome contributions! send an email to us <a class="oss-link" href="/contact-us">here</a></p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Why do i have to click so many download links when downloading?</h3>
+      <p>Because github doesn't allow us to upload a zip file for everything, so we just link you to the drivers which you have to click individually.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What are the driver types?</h3>
+      <p>There are two types of drivers: generic and optimized. Generic drivers are for unknown hardware, while optimized drivers are for specific hardware.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Why are there no optimised drivers for Linux distributions?</h3>
+      <p>Linux distributions already come with great drivers, so we don't need to provide optimised drivers.</p>
+    </div>
+    <!-- SERIAL TRIGGER -->
+    <div id="serial-numbers" class="serial-number faq-item">
+      <div id="openSerials" class="serial-trigger">
+        <span>Serial numbers</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container footer-content text-center">
+      <a href="/Downloads/license.txt" download class="footer-link">Copyleft 🄯 2026 strawberry-croissant. All rights reserved.</a>
+    </div>
+  </footer>
+
+  <!-- SERIAL MODAL -->
+  <div id="serialModal" class="modal hidden">
+    <div class="modal-bg"></div>
+
+    <div class="modal-box">
+      <div class="modal-header">
+        <div id="closeSerialsTrigger" class="serial-trigger">
+          <span>Serial numbers</span>
+        </div>
+        <button id="closeSerialsBtn" class="modal-close-x" aria-label="Close modal">×</button>
+      </div>
+
+      <div class="serial-search-container">
+        <input type="text" id="serialSearch" placeholder="Search serial numbers...">
+      </div>
+
+      <div id="serialBento" class="bento">
+        <!-- Rendered by JS -->
+      </div>
+      
+      <div class="request-sn">
+        Miss yours? <a href="mailto:strawberrycroissant@proton.me?subject=Special%20S/N%20Request">Request Special S/N</a>
+      </div>
+
+      <button id="closeSerialsTrigger" class="btn btn-secondary">Close</button>
+    </div>
+  </div>
+
+  <script src="/scripts/faq.js"></script>
+</body>
+</html>

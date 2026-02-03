@@ -1,0 +1,43 @@
+# Enable Rewrite Engine
+Options -MultiViews
+RewriteEngine On
+RewriteBase /
+
+# 1. Redirect /index.html to /
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^(.*)index\.html$ /$1 [L,R=301]
+
+# 2. Redirect /file.html to /file (External Redirect)
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^([^.]+)\.html$ $1 [L,R=301]
+
+# 3. Internally rewrite /file to /file.html (Internal Rewrite)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*?)$ $1.html [L]
+
+# 1. Disable directory browsing globally
+Options -Indexes
+
+# 2. Prevent access to ALL hidden files (starting with a dot)
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# 3. Specifically block Git and GitHub directories
+RedirectMatch 404 /\.git
+RedirectMatch 404 /\.github
+
+# 4. Protect specific sensitive files from being downloaded
+<FilesMatch "^(package\.json|package-lock\.json|server\.js|node_modules|vercel\.json|\.gitignore)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# 5. Prevent script injection and basic XSS (Security Headers)
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>

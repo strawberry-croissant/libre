@@ -1,0 +1,21 @@
+Privacy Policy
+
+Last Updated: [29/12/2025]
+
+This Privacy Policy describes how information is collected and handled when you access or use this website.
+
+When you access this website, limited technical information is automatically transmitted by your browser and may be collected for basic operational and analytical purposes. This information may include your browser’s user agent string, operating system and platform information, preferred language settings, screen resolution, and time zone. This information is provided automatically by your browser and does not directly identify you as an individual.
+
+The website does not intentionally collect, request, or store personally identifiable information, including names, email addresses, phone numbers, physical addresses, or account credentials.
+
+The limited technical information collected is used solely to ensure basic website functionality, diagnose technical issues, and understand general usage patterns at an aggregated level. This information is not used for cross-site tracking, profiling, or targeted advertising.
+
+The collected information is not sold, rented, or shared with third parties, except where required by law or where processing is necessary for basic website operation through standard hosting or infrastructure services.
+
+Technical information is retained only for as long as necessary to fulfill the purposes described in this Privacy Policy, unless a longer retention period is required by law.
+
+The website may be hosted on or delivered through third-party infrastructure providers. Such providers may process technical information as part of normal service operation. The Providers are not responsible for the privacy practices or data handling of third-party services.
+
+Reasonable technical and organizational measures are taken to protect the website and its operation. However, no method of transmission or storage is completely secure, and absolute security cannot be guaranteed.
+
+This Privacy Policy may be updated at any time. Continued use of the website constitutes acceptance of the updated policy.

@@ -1,0 +1,45 @@
+Terms of Service
+
+Last Updated: [19/1/2026]
+
+By accessing or using this website and any software, bootable images, scripts, documentation, or related materials made available through it (collectively, the “Materials”), you agree to be bound by these Terms of Service. If you do not agree to these terms, you must immediately discontinue use of the website and Materials.
+
+1. Acceptance of Terms
+
+Your access to or use of this website constitutes a legally binding agreement between you and the creator, operator, and distributor of the website and Materials (collectively, the “Providers”).
+
+2. Educational and Research Purpose Only
+
+The Materials are provided solely for educational, research, and informational purposes. They are intended to demonstrate technical concepts relating to operating systems, boot processes, and system architecture.
+
+The Materials are not intended to be used, and must not be used, to bypass or disable device management systems, evade administrative or institutional controls, gain unauthorized access to devices, accounts, or networks, or violate any applicable law, regulation, policy, or contractual obligation.
+
+3. User Responsibility
+
+You acknowledge and agree that you are solely responsible for determining whether your use of the Materials is lawful and authorized. You are responsible for obtaining all necessary permissions prior to use.
+
+You further acknowledge that you alone bear responsibility for any consequences arising from your use or misuse of the Materials, including but not limited to legal, disciplinary, academic, financial, or technical consequences.
+
+4. No Affiliation or Endorsement
+
+The Providers are not affiliated with, endorsed by, or acting on behalf of any educational institution, corporation, device manufacturer, software vendor, or government authority.
+
+Use of the Materials does not imply authorization, approval, or endorsement by any third party.
+
+5. Limitation of Liability
+
+To the maximum extent permitted by law, the Providers shall not be liable for any direct, indirect, incidental, consequential, or special damages arising out of or related to your access to or use of the website or Materials. This includes, without limitation, damages resulting from system modification, data loss, security breaches, or legal or disciplinary action.
+
+You expressly waive any right to bring claims against the Providers arising from your use of the website or Materials.
+
+6. No Warranty
+
+The Materials are provided “as is” and “as available,” without warranties of any kind, whether express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.
+
+7. Termination
+
+The Providers reserve the right to suspend or terminate access to the website or Materials at any time, without notice, for any reason.
+
+8. Changes to Terms
+
+These Terms of Service may be updated at any time. Continued use of the website constitutes acceptance of the revised terms.
