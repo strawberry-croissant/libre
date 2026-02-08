@@ -9,4 +9,9 @@ service-account.json
 validate_yaml.py
 vercel.json
 LICENSE
+CHANGELOG.md
+CONTRIBUTING.md
+.agent/
+
+
 

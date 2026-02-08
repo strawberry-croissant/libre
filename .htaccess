@@ -28,9 +28,11 @@ Options -Indexes
 # 3. Specifically block Git and GitHub directories
 RedirectMatch 404 /\.git
 RedirectMatch 404 /\.github
+RedirectMatch 404 /\.agent
+
 
 # 4. Protect specific sensitive files from being downloaded
-<FilesMatch "^(package\.json|package-lock\.json|server\.js|node_modules|vercel\.json|\.gitignore|LICENSE|README\.md)$">
+<FilesMatch "^(package\.json|package-lock\.json|server\.js|node_modules|vercel\.json|\.gitignore|LICENSE|README\.md|CHANGELOG\.md|CONTRIBUTING\.md)$">
     Order allow,deny
     Deny from all
 </FilesMatch>
