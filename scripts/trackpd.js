@@ -1,6 +1,3 @@
-/**
- * Tracking script for specific links and actions
- */
 (() => {
     document.addEventListener('DOMContentLoaded', () => {
         const link = document.getElementById('sixSevenLink');

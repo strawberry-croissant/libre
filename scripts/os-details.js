@@ -1,10 +1,4 @@
-
 (() => {
-    // Note: OS_CONFIG is expected to be loaded via scripts/os-config.js
-    
-    /**
-     * Shows a toast notification when downloads are complete
-     */
     const showDownloadComplete = () => {
         const toast = document.createElement('div');
         toast.className = 'download-toast';
@@ -15,7 +9,6 @@
             </div>
         `;
         
-        // Add specific toast styles if not already present
         if (!document.getElementById('toast-styles')) {
             const style = document.createElement('style');
             style.id = 'toast-styles';
@@ -53,20 +46,17 @@
         const config = (window.OS_CONFIG && window.OS_CONFIG[osKey]) ? window.OS_CONFIG[osKey] : null;
 
         if (!config) {
-            console.warn(`[Libre] No config found for OS: "${osKey}". (URL OS Param: ${osKey})`);
-            // Only redirect if absolutely necessary, but maybe the user just navigated here by mistake
+            console.warn(`[Libre] No config found for OS: "${osKey}".`);
             if (!osKey) {
                 window.location.href = '/downloads';
                 return;
             }
         }
 
-        // Update Page SEO
         document.title = `Libre - ${config.title}`;
         const metaDesc = document.querySelector('meta[name="description"]');
         if (metaDesc) metaDesc.setAttribute('content', config.metaDescription);
 
-        // Update Content
         const titleEl = document.getElementById('detailsTitle');
         const descEl = document.getElementById('detailsDescription');
         const btnGroup = document.getElementById('detailsBtnGroup');
@@ -78,7 +68,6 @@
             `;
         }
 
-        // Add details icon styling if not present
         if (!document.getElementById('details-icon-styles')) {
             const style = document.createElement('style');
             style.id = 'details-icon-styles';
@@ -170,7 +159,6 @@
                     from { opacity: 0; transform: translateY(-10px); }
                     to { opacity: 1; transform: translateY(0); }
                 }
-                /* Custom Dropdown UI for Serials */
                 .custom-dropdown {
                     position: relative;
                     width: 100%;
@@ -237,14 +225,10 @@
             document.head.appendChild(style);
         }
 
-        // Global spoiler handler
         document.body.addEventListener('click', (e) => {
             if (e.target.classList.contains('spoiler')) {
                 if (osKey === 'mac') {
-                    alert('To view full development logs or contribute, you must contact us and apply to be a developer. To become a developer, click on the link that says contact us here.');
-                } else {
-                    // For other OS spoilers, we can keep the default reveal behaviour
-                    // e.target.classList.add('revealed');
+                    alert('To view full development logs or contribute, you must contact us and apply to be a developer.');
                 }
             }
         });
@@ -271,8 +255,6 @@
             const scaleSvg = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h18"/></svg>`;
             
             const icon = driverType === 'special' ? rocketSvg : scaleSvg;
-            // Use color-mix for the background to keep text opaque. 
-            // 90% transparent for special, 95% for generic.
             const bgStyle = `background: color-mix(in srgb, var(--accent-color), transparent ${driverType === 'special' ? '90%' : '95%'});`;
 
             driverInfoHtml = `
@@ -294,14 +276,11 @@
             btnGroup.innerHTML = '';
             
             if (currentAssetsLink) {
-                // SPECIAL DRIVERS (Optimized) - Dropdown Selection
                 if (driverType === 'special' && LIBRE_CONFIG.SERIALS && LIBRE_CONFIG.SERIALS.length > 0) {
                     const container = document.createElement('div');
                     container.className = 'download-selection-container';
-                    // Select Arrow Helper
                     const arrowIcon = `<span class="dropdown-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>`;
 
-                    // Create Custom Dropdown
                     const customDropdown = document.createElement('div');
                     customDropdown.className = 'custom-dropdown';
 
@@ -314,7 +293,6 @@
                     const inner = document.createElement('div');
                     inner.className = 'dropdown-inner';
 
-                    // Create Download Button (Initially Disabled)
                     const downloadBtn = document.createElement('a');
                     downloadBtn.className = 'btn btn-primary disabled';
                     downloadBtn.textContent = 'Download Optimized Driver';
@@ -327,16 +305,13 @@
                         item.className = 'dropdown-item';
                         item.textContent = serial.label;
                         item.addEventListener('click', () => {
-                            // Update items
                             inner.querySelectorAll('.dropdown-item').forEach(i => i.classList.remove('selected'));
                             item.classList.add('selected');
                             
-                            // Update trigger
                             trigger.querySelector('span').textContent = serial.label;
                             content.classList.remove('open');
                             trigger.querySelector('.dropdown-arrow').classList.remove('rotate-arrow');
 
-                            // Update Button
                             downloadBtn.href = serial.file;
                             downloadBtn.classList.remove('disabled');
                             downloadBtn.style.opacity = '1';
@@ -352,7 +327,6 @@
                         trigger.querySelector('.dropdown-arrow').classList.toggle('rotate-arrow', isOpen);
                     });
 
-                    // Close if clicked outside
                     window.addEventListener('click', (e) => {
                         if (!customDropdown.contains(e.target)) {
                             content.classList.remove('open');
@@ -369,7 +343,6 @@
                     btnGroup.appendChild(container);
 
                 } else {
-                    // GENERIC / STANDARD FLOW
                     const assetsBtn = document.createElement('a');
                     assetsBtn.className = 'btn btn-primary';
                     
@@ -383,13 +356,10 @@
                             e.preventDefault();
                             
                             if (window.isMobile) {
-                                alert("⚠️ This download is intended for a PC. For the best experience and to use these files, please visit this page on your computer.");
+                                alert("⚠️ Use a PC for this download.");
                             }
 
-                            const confirmMsg = `This will download ${currentAssetsLink.length} files.\n\n` +
-                                `📁 IMPORTANT: After downloading, place all drivers in the same folder.\n\n` +
-                                `📄 A README is included with step-by-step instructions.\n\n` +
-                                `Your browser may ask for permission to download multiple files. Please click "Allow" to get the full package.`;
+                            const confirmMsg = `This will download ${currentAssetsLink.length} files.`;
                             
                             if(confirm(confirmMsg)) {
                                 const totalFiles = currentAssetsLink.length;
@@ -417,7 +387,7 @@
                         const note = document.createElement('p');
                         note.className = 'text-mini mt-sm';
                         note.style.lineHeight = '1.4';
-                        note.innerHTML = `<strong>Tip:</strong> If the downloads don't start, look for an icon in your address bar to <strong>"Allow multiple downloads"</strong>.`;
+                        note.innerHTML = `<strong>Tip:</strong> Allow multiple downloads if prompted.`;
                         btnGroup.appendChild(note);
                     } else {
                         assetsBtn.href = currentAssetsLink;
@@ -431,13 +401,12 @@
             }
 
             if (config.isoOptions) {
-                // Reverted to standard selection box
                 const selectContainer = document.createElement('div');
                 selectContainer.className = 'iso-selection-group mt-sm';
                 selectContainer.style.width = '100%';
 
                 const select = document.createElement('select');
-                select.className = 'btn-iso'; // Maintain styling 
+                select.className = 'btn-iso'; 
                 select.style.padding = '12px 18px';
                 select.style.borderRadius = '12px';
                 select.style.border = '1px solid var(--border-color)';
@@ -445,7 +414,7 @@
                 select.style.color = 'var(--text-color)';
                 select.style.cursor = 'pointer';
                 select.style.width = '100%';
-                select.style.appearance = 'auto'; // Use native appearance for true selection box
+                select.style.appearance = 'auto';
                 select.style.outline = 'none';
 
                 const defaultOpt = document.createElement('option');
@@ -464,7 +433,7 @@
                 select.addEventListener('change', (e) => {
                     if (e.target.value) {
                         window.open(e.target.value, '_blank');
-                        select.selectedIndex = 0; // Reset
+                        select.selectedIndex = 0;
                     }
                 });
 
@@ -482,8 +451,6 @@
         }
     });
 
-    // Handle BFCACHE restores
     window.addEventListener('pageshow', () => {
-        // any specific restore logic would go here
     });
 })();

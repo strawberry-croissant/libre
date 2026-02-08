@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = 3000;
-// Adjusted ROOT to be one level up since this script is now in /scripts
 const ROOT = path.join(__dirname, '..');
 
 const MIME_TYPES = {
@@ -21,32 +20,25 @@ const MIME_TYPES = {
 http.createServer((req, res) => {
     let urlPath = req.url;
     
-    // Remove query string
     const queryIndex = urlPath.indexOf('?');
     if (queryIndex !== -1) {
         urlPath = urlPath.substring(0, queryIndex);
     }
 
-    // specific fix for /downloads because of the folder conflict
-    // and general clean URL support
     let filePath = path.join(ROOT, urlPath);
     let ext = path.extname(filePath);
 
-    // 1. Try serving exact file (e.g. style.css, script.js)
     if (ext && fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
         serveFile(res, filePath);
         return;
     }
 
-    // 2. Try adding .html (e.g. /faq -> /faq.html)
-    // We prioritize this over directory to fix the /downloads issue
     const htmlPath = filePath + '.html';
     if (!ext && fs.existsSync(htmlPath)) {
         serveFile(res, htmlPath);
         return;
     }
 
-    // 3. Try directory index (e.g. / -> /index.html)
     if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
         const indexPath = path.join(filePath, 'index.html');
         if (fs.existsSync(indexPath)) {
@@ -55,13 +47,11 @@ http.createServer((req, res) => {
         }
     }
 
-    // 404
     res.writeHead(404, { 'Content-Type': 'text/html' });
-    res.end('<h1>404 Not Found</h1><p>The requested URL was not found on this server.</p>');
+    res.end('<h1>404 Not Found</h1>');
 
 }).listen(PORT, () => {
-    console.log(`Server running locally at http://localhost:${PORT}/`);
-    console.log('Press Ctrl+C to stop.');
+    console.log(`Server at http://localhost:${PORT}/`);
 });
 
 function serveFile(res, filePath) {

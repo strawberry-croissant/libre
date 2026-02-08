@@ -1,6 +1,3 @@
-/**
- * Tracking script for Index page
- */
 (() => {
     document.addEventListener('DOMContentLoaded', () => {
         const trackingUrl = LIBRE_CONFIG.BACKEND.INDEX_TRACKING_URL;

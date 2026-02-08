@@ -1,6 +1,3 @@
-/**
- * Central Configuration for config
- */
 const LIBRE_CONFIG = {
   BACKEND: {
     TRACKING_URL: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
@@ -19,11 +16,10 @@ const LIBRE_CONFIG = {
   },
   /* add serial numbers here */
   SERIALS: [
-    { sn: '50900008934', label: '50900008934 (Laptop,Acer)', file: '/Downloads/Specialized/place to put files and text files_W10-11_Acer_laptop.zip' }
+    { sn: '50900008934', label: '50900008934 (Laptop,Acer)', file: '/downloads/Specialized/place to put files and text files_W10-11_Acer_laptop.zip' }
   ]
 };
 
-// Freeze to prevent modifications
 window.LIBRE_CONFIG = LIBRE_CONFIG;
 Object.freeze(LIBRE_CONFIG);
 Object.freeze(LIBRE_CONFIG.BACKEND);

@@ -1,6 +1,3 @@
-/**
- * OS Configuration Data
- */
 const OS_CONFIG = {
     'windows11': {
         title: 'Windows 11 (Light)',
