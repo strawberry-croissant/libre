@@ -1,5 +1,10 @@
 # Libre
 
+## fair warning
+
+i do NOT know how everything works. it just works. if you DO modify the code, do not be suprised at errors. DONT touch any backend parts. i do NOT help with backend. 
+
+
 **Your hardware. Unrestricted.**
 
 Libre is a lean, privacy-focused operating system environment designed for absolute control. It provides a portable, unrestricted system that runs directly from a USB drive, ensuring zero tracking and maximum performance.
