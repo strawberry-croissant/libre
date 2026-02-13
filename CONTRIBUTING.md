@@ -17,7 +17,7 @@ Thank you for your interest in contributing to Libre! We welcome contributions t
 
 1. Fork the repository.
 2. Create a new branch for your feature or bug fix.
-3. Keep your changes focused—if you have multiple unrelated changes, use multiple pull requests.
+3. Keep your changes focused, if you have multiple unrelated changes, use multiple pull requests.
 4. Ensure your code follows the existing style and is well-documented.
 5. Submit your pull request with a clear description of the changes.
 
