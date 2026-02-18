@@ -2,7 +2,7 @@
 
 All notable changes to the Libre project will be documented in this file.
 
-## [v0.92] - 2026-02-08
+## [v0.92] - 2026-02-01
 
 ### Added
 
@@ -10,25 +10,25 @@ All notable changes to the Libre project will be documented in this file.
 
 ### Fixed
 
-- **Case Sensitivity Fix**: Renamed `Downloads` folder to `downloads` and updated all internal links to lowercase to fix 404 errors on Linux-based production servers (InfinityFree).
+- **Prod server fix**: Renamed `Downloads` folder to `downloads` and updated all internal links to lowercase to fix 404 errors on Linux-based production server.
 
-## [v0.91] - 2026-02-04
+## [v0.91] - 2026-01-15
 
-### Added
+### Improvement
 
-- **FAQ Enhancements**: Made serial number boxes interactive and added animated chevron icons for expansion/collapse.
+- **FAQ Improved**: Moved FAQ from index page for better legibility and more info.
 
-## [v0.90] - 2026-02-03
+## [v0.90] - 2026-01-02
 
 ### Improved
 
-- **Interactive Background**: Added touch controls and gyroscope integration for mobile devices. Fine-tuned sensitivity and fluid behavior across all screen sizes.
+- **Guide enhancements**: Made guide text more legible to less experienced users.
 
-## [v0.89] - 2026-01-31
+## [v0.89] - 2025-12-30
 
-### Changed
+### Added
 
-- **Typography**: Updated font stack to prioritize **Satoshi** over Helvetica for a more premium aesthetic.
+- **Out of closed beta**: Out from developer-only testing/ideation state
 
 ---
 

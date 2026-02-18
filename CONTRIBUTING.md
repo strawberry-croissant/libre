@@ -11,7 +11,7 @@ Thank you for your interest in contributing to Libre! We welcome contributions t
 
 ### Feature Requests
 
-- We're always open to suggestions! Please open an issue to discuss new features before starting development.
+- We're always open to suggestions! Please open an issue to discuss new features before startinf your own development.
 
 ### Pull Requests
 
@@ -26,7 +26,8 @@ Thank you for your interest in contributing to Libre! We welcome contributions t
 The project is a static site with some JavaScript. To run it locally:
 
 1. Clone the repository.
-2. Open `index.html` in your browser.
+2. Host the file
+3. Open `localhost:PORT` in your browser.
 
 ## Code of Conduct
 

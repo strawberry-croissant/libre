@@ -2,7 +2,7 @@
     const CONFIG = {
         mouseInfluence: 0.66431,  
         gyroInfluence: 1.5,
-        touchInfluence: 1.8,
+        touchInfluence: 1.9,
         globalSpeed: 0.002,     
     };
 
@@ -17,7 +17,7 @@
         initialBeta: null, 
         initialGamma: null,
         
-        // prioritization: touch > gyro/idle
+        // touch > gyro/idle
         isTouching: false
     };
 
