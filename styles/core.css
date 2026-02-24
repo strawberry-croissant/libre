@@ -1,4 +1,4 @@
-/* Font imports moved to HTML <link> tags for reliability */
+/* font imports moved to HTML <link> tags for reliability */
 /* @import url('https://api.fontshare.com/v2/css?f%5B%5D=satoshi@900,700,500,300,400&display=swap'); */
 /* @import url('https://rsms.me/inter/inter.css'); */
 
@@ -225,7 +225,7 @@ nav {
   transition: 0.25s;
 }
 
-/* prevent toggle animation on initial paint while JS syncs state */
+/* prevents toggle animation on initial paint while JS syncs state */
 html.no-toggle-transition .slider,
 html.no-toggle-transition .slider::before {
   transition: none !important;
