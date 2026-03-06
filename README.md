@@ -39,8 +39,8 @@ We provide tailored builds for a variety of ecosystems:
 
 ### Links
 
-- **Website**: [libre.strawberry-croissant.com](https://libre-os.com) (or your specific URL)
-- **Legal**: [Terms & Privacy](https://libre-os.com/legal)
+- **Website**: [strawberry-croissant.greatsite.net](https://strawberry-croissant.greatsite.net)
+- **Legal**: [Terms & Privacy](https://strawberry-croissant.greatsite.net/legal)
 
 ### License
 
